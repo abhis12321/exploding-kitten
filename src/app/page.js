@@ -24,12 +24,14 @@ export default function Page() {
 
   function handleClick(delcard) {
     let newcards = cards.filter(card => card != delcard);
-    suffle(newcards);
+    setTimeout(() => {      
+      suffle(newcards);
+    }, 1000);
   }
 
   return (
-    <div className=' bg-slate-800 p-8'>
-      <h1 className='py-4 px-8 my-2 text-4xl rounded-md border-2 border-white font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 w-fit'>Home Page</h1>
+    <div className=' bg-slate-800 min-h-[100vh] p-8'>
+      <h1 className='mx-auto text-center py-4 px-8 my-2 text-4xl rounded-md border-2 border-white font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 w-fit'>Home Page</h1>
       <div className='flex flex-wrap items-center justify-center'>
         {
           cards.map((card , index) => {
